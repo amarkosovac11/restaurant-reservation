@@ -16,3 +16,32 @@
 .app__header-img img {
     width: 80%;
 }
+
+
+/* TABLET (like iPad, between ~769px - 1200px) */
+@media (max-width: 1200px) {
+    .app__header-h1 {
+        font-size: 60px;
+    }
+
+    .app__header-img img {
+        width: 70%;
+    }
+}
+
+/* PHONE (max-width usually around 768px) */
+@media (max-width: 768px) {
+    .app__header {
+        text-align: center; /* usually looks better on phone */
+        padding: 2rem 1rem;
+    }
+
+    .app__header-h1 {
+        font-size: 40px;
+        line-height: 1.1;
+    }
+
+    .app__header-img img {
+        width: 100%;
+    }
+}
