@@ -1,0 +1,115 @@
+.app__gallery2 {
+background-color: var(--color-black);
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: center;
+  gap: 3rem; /* space between heading and images */
+  padding: 2rem;
+}
+
+
+/* .flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+
+.app__gallery2-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    
+    gap: 3rem;
+   padding: 2rem; 
+
+}
+
+/* .app__gallery-content {
+  text-align: center;  
+} */
+
+.app__gallery-content h1 {
+  margin-top: 0.5rem;
+}
+
+.app__gallery-images {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;  /* adjust container width */
+}
+
+.app__gallery-images_container {
+  display: flex;
+  overflow-x: auto;    /* horizontal scroll */
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.app__gallery-images_card {
+  min-width: 450px;    /* each card width */
+  height: 260px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;      /* prevent shrinking in flex row */
+  margin-bottom: 6rem;
+}
+
+.app__gallery-images_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__image-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px; 
+  color: white;
+  font-size: 24px;
+}
+
+.app__gallery-images_arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.gallery__arrow-icon {
+  cursor: pointer;
+  font-size: 60px;
+  color: var(--color-golden);
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.gallery__arrow-icon:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+.app__gallery-images_card button {
+  position: absolute;
+  bottom: 10px;       /* distance from bottom */
+  left: 50%;          /* move to horizontal center */
+  transform: translateX(-50%); /* perfectly center it */
+  width: 120px;        /* adjust size as you want */
+  height: 50px;       
+
+   display: flex;               /* ✅ add this */
+  justify-content: center;     /* ✅ center text horizontally */
+  align-items: center;         /* ✅ center text vertically */
+
+  font-size: 16px;             /* ✅ make text bigger */
+  font-weight: 600;            /* ✅ optional bold text */
+
+  cursor: pointer;             /* this WILL work now */
+  z-index: 5;
+
+}
