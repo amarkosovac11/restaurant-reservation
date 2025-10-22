@@ -1,61 +1,54 @@
 import React from 'react';
-import { BsInstagram, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
-
-import  SubHeading  from '../../components/SubHeading/SubHeading';
+import SubHeading from '../../components/SubHeading/SubHeading';
 import { images } from "../../constants";
+import EventCard from '../../components/EventCard';
+import FullGallery from '../FullGallery/FullGallery';
 import './Gallery2.css';
 
-const galleryImages = [images.gallery01, images.gallery02, images.gallery03, images.gallery04, images.bg, images.logo, images.knife, images.findus];
-
-
 const Gallery2 = () => {
+  const [selectedEvent, setSelectedEvent] = React.useState(null);
 
-
-    const scrollRef = React.useRef(null);
-
-
-    const scroll = (direction) => {
-        const { current } = scrollRef;
-
-        if (direction === 'left') {
-            current.scrollLeft -= 300;
-        }
-        else {
-            current.scrollLeft += 300;
-        }
-    }
-
-
+  // If an event is selected, show full gallery
+  if (selectedEvent) {
     return (
-        <div className='app__gallery2' id='gallery'>
-            
-            <div className='app__gallery2-content'>
-                
-                <h1 className='headtext__cormorant'>Photo Gallery</h1>
-                <p className='p__opensans' style={{ color: "#AAA", marginTop: "2rem", marginBottom: "2rem" }}>AA AAA AAA AAAA AAA AAA AAA AAAA AAA AAAA AAA AAAAA AA A AA A AA AA A AA</p>
-                
-            </div>
+      <FullGallery
+        event={selectedEvent}
+        onBack={() => setSelectedEvent(null)}
+      />
+    );
+  }
 
+  // Main gallery / events overview
+  return (
+    <div className='app__gallery2'>
+      <SubHeading title="Instagram" />
+      <h1 className='headtext__cormorant'>Photo Gallery</h1>
+      <p className='p__opensans' style={{ color: "#AAA", marginTop: "2rem" }}>
+        Check out our recent club nights!
+      </p>
 
-            <div className='app__gallery-images'>
-                    <div className='app__gallery-images_container' ref={scrollRef}>
-                    {galleryImages.map((image, index) => (
-                      <div className='app__gallery-images_card flex__center' key={'gallery_image-${index+1}'}>
-                      <img src={image} alt="gallery" />
-                      <button type='button' className='custom__button'>View All</button>
-                      </div>
+      <div className='app__gallery-events'>
+          <EventCard
+          title="Voya Laf Bratov"
+          cover={images.voyageCover}
+          onViewAll={() => setSelectedEvent('voyage')}
+        />
+        
 
-                    ))}
-                    </div>
-            
-                    <div className='app__gallery-images_arrows'>
-                      <BsArrowLeftShort className='gallery__arrow-icon' onClick={() => scroll('left')} />
-                      <BsArrowRightShort className='gallery__arrow-icon' onClick={() => scroll('right')} />
-            
-                    </div>
-                  </div>
-        </div>
-    )
-}
+        <EventCard
+          title="Crni Cerak Darkside"
+          cover={images.crniCerakCover}
+          onViewAll={() => setSelectedEvent('crniCerak')}
+        />
+        <EventCard
+          title="Sajfer"
+          cover={images.sajferCover}
+          onViewAll={() => setSelectedEvent('sajfer')}
+        />
+        
+      </div>
+    </div>
+  );
+};
 
 export default Gallery2;

@@ -25,6 +25,7 @@ const Intro = () => {
         ref={vidRef}
         type="video/mp4"
         loop
+        autoPlay
         controls={false}
         muted
       />

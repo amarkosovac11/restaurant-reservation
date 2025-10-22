@@ -16,7 +16,22 @@ import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
 
-export default {
+import crniCerakCover from '../assets/crniCerakCover.jpg';
+import sajferCover from '../assets/sajferCover.jpg';
+import voyageCover from '../assets/voyageCover.jpg';
+
+import voyage1 from '../assets/events/voyage1.jpg';
+import voyage2 from '../assets/events/voyage2.jpg';
+
+import crni1 from '../assets/events/crni1.jpg';
+import crni2 from '../assets/events/crni2.jpg';
+
+import sajfer1 from '../assets/events/sajfer1.jpg';
+import sajfer2 from '../assets/events/sajfer2.jpg';
+
+// ✅ This is the ONLY export you need
+export const images = {
+  // --- all old images (keep them)
   bg,
   G,
   gallery01,
@@ -34,4 +49,14 @@ export default {
   sign,
   quote,
   gericht,
+
+  // --- COVERS (for Gallery2 cards) ---
+  crniCerakCover,
+  sajferCover,
+  voyageCover,
+
+  // --- FULL GALLERIES (for FullGallery) ---
+  crniCerak: [crni1, crni2],
+  sajfer: [sajfer1, sajfer2],
+  voyage: [voyage1, voyage2],
 };
