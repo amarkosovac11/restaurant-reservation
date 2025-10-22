@@ -1,4 +1,4 @@
-import images from './images';
+import { images } from './images';
 
 const wines = [
   {
@@ -53,6 +53,21 @@ const cocktails = [
     title: 'Negroni',
     price: '$26',
     tags: 'Gin | Sweet Vermouth | Campari | Orange garnish',
+  },
+  {
+    title: 'Kafa Duza u Malu',
+    price: '$2.5',
+    tags: 'Kafa | Duza u Malu | kafa | 10 ml',
+  },
+  {
+    title: 'Kafa do pola',
+    price: '$2.5',
+    tags: 'Kafa | Duza u Malu | sa kiselom | 10 ml',
+  },
+  {
+    title: 'Kola',
+    price: '$5',
+    tags: 'Sok | Duza u Malu | Dino Merlin | 10 ml',
   },
 ];
 
